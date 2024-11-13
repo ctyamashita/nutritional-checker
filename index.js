@@ -15,10 +15,6 @@ function stopTracks(stream) {
 
 // Capture interface
 startCameraBtn.addEventListener('click', async function() {
-  const constraints = {video: true, audio: false}; 
-  const stream = await navigator.mediaDevices.getUserMedia(constraints);
-  
-  stopTracks(stream);
   startCapture();
   startCameraBtn.classList.add('hide');
   takePhotoBtn.classList.remove('hide');
@@ -28,9 +24,8 @@ function startCapture() {
   stop(); // close before play
   video.classList.add('active');
   const constraints = {
-    video: true,
-    audio: false,
-    facingMode: "environment"
+    video: {facingMode: "environment"},
+    audio: false
   }
 
   navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
