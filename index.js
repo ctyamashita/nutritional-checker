@@ -16,7 +16,7 @@ function stopTracks(stream) {
 
 // Capture interface
 startCameraBtn.addEventListener('click', async function() {
-  const constraints = {video: true, audio: false, facingMode: "environment" }; 
+  const constraints = {video: true, audio: false}; 
   const stream = await navigator.mediaDevices.getUserMedia(constraints);
   if (cameraDevice === undefined) {
     const devices = await navigator.mediaDevices.enumerateDevices();
@@ -24,9 +24,9 @@ startCameraBtn.addEventListener('click', async function() {
   }
   
   stopTracks(stream);
-  startCapture(cameraDevice)
-  startCameraBtn.classList.add('hide')
-  takePhotoBtn.classList.remove('hide')
+  startCapture(cameraDevice);
+  startCameraBtn.classList.add('hide');
+  takePhotoBtn.classList.remove('hide');
 });
 
 function startCapture(cameraDevice) {
@@ -35,8 +35,9 @@ function startCapture(cameraDevice) {
   let constraints = {};
   if (cameraDevice.deviceId){
     constraints = {
-      video: {deviceId: cameraDevice.deviceId},
-      audio: false
+      video: {deviceId: cameraDevice.deviceId },
+      audio: false,
+      facingMode: "environment"
     }
   }else{
     constraints = {
