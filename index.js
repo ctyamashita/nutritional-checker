@@ -69,11 +69,6 @@ photo.onload = () => readBarcode();
 
 searchBtn.addEventListener('click', (e) => {
   const barcode = document.getElementById("barcode").value;
-  if (isValid()) {
-    searchBtn.removeAttribute('disabled')
-  } else {
-    searchBtn.setAttribute('disabled','')
-  }
 
   document.getElementById("result-img").innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'
   searchProduct(barcode);
@@ -131,6 +126,11 @@ function readBarcode() {
     .then((barcodes) => {
       const barCode = barcodes[0]?.rawValue || 'No barcode detected'
       document.getElementById("barcode").value = barCode;
+      if (isValid()) {
+        searchBtn.removeAttribute('disabled')
+      } else {
+        searchBtn.setAttribute('disabled','')
+      }
     })
     .catch((err) => {
       console.log(err);
