@@ -93,8 +93,8 @@ function searchProduct(barcode) {
     .then(response=>response.json())
     .then(data => {
       if (data.status_verbose == 'product found') {
-        console.log(data.product.nutriments)
         const nutritionsHeaders = Object.keys(data.product.nutriments).filter(key => (!/[_-]/.test(key) && key !== 'energy'));
+        if (nutritionsHeaders.length === 0) return
         const nutritionTable = nutritionsHeaders.map(header=>{
           return `<tr>
                     <th>${header}</th>  
@@ -109,7 +109,7 @@ function searchProduct(barcode) {
                                                                   <td>${data.product.nutriments['energy-kcal_100g']}${data.product.nutriments['energy-kcal_unit']}</td>
                                                                 </tr>
                                                                 ${nutritionTable.join('\n')}`
-        document.getElementById('info-content').insertAdjacentHTML('beforeend', `<a href="https://www.barcodelookup.com/${barcode}">+info</a>`)
+        document.querySelector('#info-content a').href = `https://www.barcodelookup.com/${barcode}`
       }
     })
 }

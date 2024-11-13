@@ -123,6 +123,7 @@ h3 {
   text-align: center;
   overflow: hidden;
   border-radius: .3rem;
+  font-size: 3rem;
 }
 
 #result-img img {
@@ -149,7 +150,7 @@ h3 {
   font-size: .8rem;
 }
 
-#nutrition:has(#nutrition-table:empty) {
+#info-content:has(#nutrition-table:empty) {
   display: none;
 }
 
