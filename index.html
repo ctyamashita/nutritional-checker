@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcode reader</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <h1>Nutritional Checker</h1>
+  <div class="capture-container">
+    <video class="camera" muted autoplay="autoplay" playsinline="playsinline" webkit-playsinline></video>
+    <canvas id="hiddenCanvas"></canvas>
+    <img id="photoTaken" />
+  </div>
+  <div class="camera-btn-container">
+    <button id="startCameraBtn">
+      <i class="fa-solid fa-camera"></i>
+    </button>
+    <button id="takePhotoBtn" class="hide">
+      <i class="fa-solid fa-expand"></i>
+    </button>
+  </div>
+  <div class="barcode-container">
+    <input type="text" name="barcode" id="barcode" placeholder="Enter barcode">
+    <button id="searchBtn" disabled><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+  <div id="info">
+    <div id="result-img"></div>
+    <div id="info-content">
+      <div id="nutrition">
+        <h3>Nutrition Facts</h3>
+        <p id="per-unit">Amount Per 100g</p>
+        <table id="nutrition-table"></table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

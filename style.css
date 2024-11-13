@@ -1,0 +1,202 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  align-content: center;
+  height: 100vh;
+  height: 100dvh;
+  background: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+}
+
+#hiddenCanvas, .hide {
+  display: none;
+}
+
+#photoTaken, video {
+  width: 100%;
+}
+
+#photoTaken {
+  display: block;
+}
+
+video {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.camera-btn-container,
+.barcode-container {
+  width: fit-content;
+  margin: 0 auto 1rem;
+  margin-bottom: 1rem;
+}
+
+.barcode-container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.capture-container {
+  overflow: hidden;
+  border-radius: .3rem;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+.camera-btn-container {
+  opacity: .7;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  align-content: center;
+  background-color: powderblue;
+  border: solid 2px white;
+}
+
+.camera-btn-container:hover {
+  opacity: 1;
+}
+
+#startCameraBtn,
+#takePhotoBtn {
+  background-color: transparent;
+  color: darkcyan;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+body:has(.active) #photoTaken {
+  display: none;
+}
+
+h3 {
+  margin: 0;
+}
+
+#info {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  gap: 1rem;
+}
+
+#info-content {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+#info-content > a {
+  margin-top: auto;
+  margin-left: auto;
+  padding: 8px;
+  border-radius: .3rem;
+  font-size: .8rem;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
+#result-img:empty {
+  display: none;
+}
+
+#result-img {
+  height: 300px;
+  width: 300px;
+  background-color: black;
+  color: white;
+  align-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-radius: .3rem;
+}
+
+#result-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#nutrition {
+  width: fit-content;
+  border: solid 1px;
+  padding: 1rem .5rem;
+  border-radius: .3rem;
+}
+
+#nutrition h3 {
+  font-size: 1.5rem;
+}
+
+#per-unit {
+  margin-top: 0;
+  border-bottom: solid 2px;
+  padding-bottom: .3rem;
+  font-size: .8rem;
+}
+
+#nutrition:has(#nutrition-table:empty) {
+  display: none;
+}
+
+#nutrition-table {
+  border-collapse:collapse;
+  width: 100%;
+}
+
+#nutrition-table tr:first-child > * {
+  border-bottom: solid 4px;
+  font-size: 1.2rem;
+}
+
+#nutrition-table td,
+#nutrition-table th {
+  border-bottom: solid;
+  border-collapse:collapse;
+}
+
+#nutrition-table td {
+  text-align: end;
+}
+
+#nutrition-table th {
+  text-align: start;
+  font-size: .8rem;
+}
+
+#barcode {
+  border: none;
+  padding: .7rem;
+  border-radius: .3rem;
+  font-size: 1.2rem;
+}
+
+#searchBtn {
+  border: none;
+  background: orange;
+  color: darkmagenta;
+  padding: .7rem .8rem;
+  font-size: 1.2rem;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+#searchBtn:disabled {
+  filter: grayscale(1);
+  opacity: .3;
+  cursor: default;
+}
