@@ -16,7 +16,7 @@ function stopTracks(stream) {
 
 // Capture interface
 startCameraBtn.addEventListener('click', async function() {
-  const constraints = {video: true, audio: false, facingMode: { exact: "environment" }}; 
+  const constraints = {video: true, audio: false, facingMode: "environment" }; 
   const stream = await navigator.mediaDevices.getUserMedia(constraints);
   if (cameraDevice === undefined) {
     const devices = await navigator.mediaDevices.enumerateDevices();
