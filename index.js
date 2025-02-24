@@ -109,7 +109,7 @@ function searchProduct(barcode) {
                                                                   <td>${data.product.nutriments['energy-kcal_100g']}${data.product.nutriments['energy-kcal_unit']}</td>
                                                                 </tr>
                                                                 ${nutritionTable.join('\n')}`
-        document.querySelector('#info-content a').href = `https://www.barcodelookup.com/${barcode}`
+        document.querySelector('#info-content a').href = `https://world.openfoodfacts.org/product/${barcode}`
       }
     })
 }

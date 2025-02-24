@@ -1,0 +1,8 @@
+flight 92,711
+hostel 45000
+food 30000
+transportation 30000
+
+
+
+airport transfer 

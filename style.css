@@ -91,6 +91,8 @@ h3 {
   margin: 0 auto;
   width: fit-content;
   gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #info-content {
@@ -101,7 +103,7 @@ h3 {
 
 #info-content > a {
   margin-top: auto;
-  margin-left: auto;
+  text-align: center;
   padding: 8px;
   border-radius: .3rem;
   font-size: .8rem;
@@ -115,8 +117,9 @@ h3 {
 }
 
 #result-img {
-  height: 300px;
-  width: 300px;
+  height: 360px;
+  width: 360px;
+  max-width: calc(100vw - 16px);
   background-color: black;
   color: white;
   align-content: center;
@@ -137,6 +140,7 @@ h3 {
   border: solid 1px;
   padding: 1rem .5rem;
   border-radius: .3rem;
+  margin-bottom: 1rem;
 }
 
 #nutrition h3 {
